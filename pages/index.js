@@ -80,7 +80,7 @@ export default function Home() {
         <QuizLogo />
         <Widget>
           <Widget.Header>
-            <h1>Básico sobre Candlesticks</h1>
+            <h1> {db.title}  </h1>
           </Widget.Header>
           <Widget.Content>
             <Form onSubmit={function (infosDoEvento) {
@@ -89,7 +89,7 @@ export default function Home() {
               console.log('Fazendo uma submissão por meio do react');
             }}
             >
-             <P> Teste os seus conhecimentos sobre Candlesticks </P>
+             <P> {db.description} </P>
               <Input
                 onChange={function (infosDoEvento) {
                   console.log(infosDoEvento.target.value);
