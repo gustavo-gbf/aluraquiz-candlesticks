@@ -28,6 +28,45 @@ export const QuizContainer = styled.div`
   }
 `;
 
+const Form = styled.form`
+  display: flex;
+  flex-wrap:wrap;
+  flex-direction: column;
+`
+
+const P = styled.p`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 1em;
+`
+
+const Input = styled.input`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 1em;
+  padding: 7px 14px;
+`
+
+const Button = styled.button`
+  /* Adapt the colors based on primary prop */
+  background: ${props => props.primary ? ({ theme }) => theme.colors.primary : "white"};
+  color: ${props => props.primary ? "white" : ({ theme }) => theme.colors.primary};
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+ 
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid ${({ theme }) => theme.colors.primary};
+  border-radius: 3px;
+  
+`;
+
 export default function Home() {
   const router = useRouter();
   const [name, setName] = React.useState('');
@@ -35,35 +74,35 @@ export default function Home() {
   return (
     <QuizBackground backgroundImage={db.bg}>
       <Head>
-        <title>AluraQuiz - Modelo Base</title>
+        <title>Quiz sobre candlesticks</title>
       </Head>
       <QuizContainer>
         <QuizLogo />
         <Widget>
           <Widget.Header>
-            <h1>The legend of zelda</h1>
+            <h1>Básico sobre Candlesticks</h1>
           </Widget.Header>
           <Widget.Content>
-            <form onSubmit={function (infosDoEvento) {
+            <Form onSubmit={function (infosDoEvento) {
               infosDoEvento.preventDefault();
               router.push(`/quiz?name=${name}`);
               console.log('Fazendo uma submissão por meio do react');
             }}
             >
-              <input
+             <P> Teste os seus conhecimentos sobre Candlesticks </P>
+              <Input
                 onChange={function (infosDoEvento) {
                   console.log(infosDoEvento.target.value);
                   // State
                   // name = infosDoEvento.target.value;
                   setName(infosDoEvento.target.value);
                 }}
-                placeholder="Diz ai seu nome"
+                placeholder="Seu nome :)"
               />
-              <button type="submit" disabled={name.length === 0}>
-                Jogar
-                {name}
-              </button>
-            </form>
+              <Button primary type="submit" disabled={name.length === 0}>
+                Jogar {name}
+              </Button>
+            </Form>
           </Widget.Content>
         </Widget>
 
