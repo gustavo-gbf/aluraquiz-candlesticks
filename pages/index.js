@@ -5,10 +5,13 @@ import { useRouter } from 'next/router';
 
 import db from '../db.json';
 import Widget from '../src/components/Widget';
+import Link from '../src/components/Link';
 import QuizLogo from '../src/components/QuizLogo';
 import QuizBackground from '../src/components/QuizBackground';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
+// import Input from '../src/components/Input';
+// import Button from '../src/components/Button';
 
 // const BackgroundImage = styled.div`
 //   background-image: url(${db.bg});
@@ -32,14 +35,14 @@ const Form = styled.form`
   display: flex;
   flex-wrap:wrap;
   flex-direction: column;
-`
+`;
 
 const P = styled.p`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   margin: 1em;
-`
+`;
 
 const Input = styled.input`
   display: flex;
@@ -47,12 +50,12 @@ const Input = styled.input`
   justify-content: space-around;
   margin: 1em;
   padding: 7px 14px;
-`
+`;
 
 const Button = styled.button`
   /* Adapt the colors based on primary prop */
-  background: ${props => props.primary ? ({ theme }) => theme.colors.primary : "white"};
-  color: ${props => props.primary ? "white" : ({ theme }) => theme.colors.primary};
+  background: ${(props) => (props.primary ? ({ theme }) => theme.colors.primary : 'white')};
+  color: ${(props) => (props.primary ? 'white' : ({ theme }) => theme.colors.primary)};
 
   display: flex;
   align-items: center;
@@ -80,19 +83,21 @@ export default function Home() {
         <QuizLogo />
         <Widget>
           <Widget.Header>
-            <h1> {db.title}  </h1>
+            <h1>
+              {db.title}
+            </h1>
           </Widget.Header>
           <Widget.Content>
-            <Form onSubmit={function (infosDoEvento) {
+            <Form onSubmit={(infosDoEvento) => {
               infosDoEvento.preventDefault();
               router.push(`/quiz?name=${name}`);
-              console.log('Fazendo uma submissão por meio do react');
             }}
             >
-             <P> {db.description} </P>
+              <P>
+                {db.escription}
+              </P>
               <Input
-                onChange={function (infosDoEvento) {
-                  console.log(infosDoEvento.target.value);
+                onChange={(infosDoEvento) => {
                   // State
                   // name = infosDoEvento.target.value;
                   setName(infosDoEvento.target.value);
@@ -100,7 +105,7 @@ export default function Home() {
                 placeholder="Seu nome :)"
               />
               <Button primary type="submit" disabled={name.length === 0}>
-                Jogar {name}
+                {`Jogar ${name}`}
               </Button>
             </Form>
           </Widget.Content>
@@ -110,12 +115,31 @@ export default function Home() {
           <Widget.Content>
             <h1>Quizes da Galera</h1>
 
-            <p>lorem ipsum dolor sit amet...</p>
+            <ul>
+              {db.external.map((linkExterno) => {
+                const [projectName, githubUser] = linkExterno
+                  .replace(/\//g, '')
+                  .replace('https:', '')
+                  .replace('.vercel.app', '')
+                  .split('.');
+
+                return (
+                  <li key={linkExterno}>
+                    <Widget.Topic
+                      as={Link}
+                      href={`/quiz/${projectName}___${githubUser}`}
+                    >
+                      {`${githubUser}/${projectName}`}
+                    </Widget.Topic>
+                  </li>
+                );
+              })}
+            </ul>
           </Widget.Content>
         </Widget>
         <Footer />
       </QuizContainer>
-      <GitHubCorner projectUrl="https://github.com/omariosouto" />
+      <GitHubCorner projectUrl="https://github.com/gustavo-gbf" />
     </QuizBackground>
   );
 }

@@ -9,11 +9,14 @@
     "lint": "eslint ./ --fix"
   },
   "dependencies": {
+    "@crello/react-lottie": "^0.0.11",
     "next": "latest",
     "next.js": "^1.0.3",
+    "prop-types": "^15.7.2",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
     "react-is": "^16.8.0",
+    "react-native-web-lottie": "^1.4.4",
     "styled-components": "^5.0.0"
   },
   "devDependencies": {

@@ -4,25 +4,123 @@
   "description": "Teste os seus conhecimentos sobre Candlesticks",
   "questions": [
     {
-      "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-      "title": "Como fazer um seletor por id via CSS?",
+      "image": "/questions/bandeiras.webp",
+      "title": "Qual é o país de origem dods candlesticks?",
       "description": "Essa é pra aquecer",
-      "answer": 2,
+      "answer": 0,
       "alternatives": [
-        ".elemento",
-        "*elemento",
-        "#elemento",
-        "%elemento"
+      "Japão",
+      "Estados Unidos",
+      "Brasil",
+      "Alemanha"
       ]
     },
     {
-      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-      "title": "Como fazer um background gradiente com css?",
-      "description": "Faz tempo em haha",
+      "image": "/questions/soja-cafe-arroz-milho.webp",
+      "title": "Qual era o produto comercializado pelos trader que criam o padrão de candles?",
+      "description": "Lembrando que foi o padrão foi criado há muito temp atraz.",
+      "answer": 2,
+      "alternatives": [
+        "Soja",
+        "Café",
+        "Arroz",
+        "Milho"
+      ]
+    },
+    {
+      "image": "/questions/traders.webp",
+      "title": "Quem trouxe o padrão de candlesticks para o ocidente?",
+      "description": "Além de trader foi autor de vários livros.",
+      "answer": 2,
+      "alternatives": [
+        "George Soros",
+        "Larry Williams",
+        "Steve Nison",
+        "Jesse Livermore"
+      ]
+    },
+    {
+      "image": "/questions/candlestick-padrao.webp",
+      "title": "Quais são tipos de gráficos mais utilizados pelos Traders?",
+      "description": "Há vários tipos de gráficos mas três deles são os mais conhecidos.",
       "answer": 0,
       "alternatives": [
-         "background: linear-gradient(#e66465, #9198e5);",
-         "background: gradient(#e66465, #9198e5);"
+        "Linhas, Barras e Candlesticks",
+        "Pontos, Barras e Renko",
+        "Renko, Linhas e Áreas",
+        "Candlesticks, Pontos e Áreas"
+      ]
+    },
+    {
+      "image": "/questions/candlestick-padrao.webp",
+      "title": "Quais as cores mais utilizadas para representar os candles de alta e baixa, respectivamente?",
+      "description": "É possível utilizar qualquer cor mas alguns são as mais comuns.",
+      "answer": 0,
+      "alternatives": [
+        "branco e preto",
+        "vermelho e preto",
+        "preto e branco",
+        "verde e branco"
+      ]
+    },
+    {
+      "image": "/questions/candlestick-padrao.webp",
+      "title": "O que a cor do candle representa?",
+      "description": "Saber a cor do candle é importante.",
+      "answer": 1,
+      "alternatives": [
+        "Nada",
+        "Movimento de alta ou de baixa",
+        "Duração do candle",
+        "Valor do ativo"
+      ]
+    },
+    {
+      "image": "/questions/candle-max-mix-open-close.webp",
+      "title": "Quais os nomes das regiões com os números de 1 a 4?",
+      "description": "Lembrando que a cor é importante para essa resposta.",
+      "answer": 2,
+      "alternatives": [
+        "topo, início, fim e fundo",
+        "máxima, início, fim e mínima",
+        "máxima, abertura, fechamento e mínima",
+        "topo, abertura, fechamento e fundo"
+      ]
+    },
+    {
+      "image": "/questions/candlestick-padrao.webp",
+      "title": "Qual das alternativas não é um padrão de candle?",
+      "description": "Alguns uns nomes estranhos mesmo.",
+      "answer": 2,
+      "alternatives": [
+        "Lápide",
+        "Martelo",
+        "Foice",
+        "Enforcado"
+      ]
+    },
+    {
+      "image": "/questions/candlestick-padrao.webp",
+      "title": "Qual padrão representa indecisão do mercado?",
+      "description": "",
+      "answer": 3,
+      "alternatives": [
+        "Engolfo de Alta",
+        "Martelo",
+        "Estrela cadente",
+        "Doji"
+      ]
+    },
+    {
+      "image": "/questions/candlestick-padrao.webp",
+      "title": "O que diferencia um martelo de um e enforcado?",
+      "description": "",
+      "answer": 3,
+      "alternatives": [
+        "Tamanho",
+        "Cor",
+        "Pavio",
+        "Tendência"
       ]
     }
   ],
